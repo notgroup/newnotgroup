@@ -1,7 +1,7 @@
 
     window.smartCheckoutConfig = {
-        app_url: "//roketads.test",
-        app_url_old: "//roketads.test"
+        app_url: (location.host.split('.')[1] == 'test') ? "//roketads.test" : '//rketads.site',
+        app_url_old: (location.host.split('.')[1] == 'test') ? "//roketads.test" : '//rketads.site'
     }
 
 if (document.getElementById('siparisformu')) {
