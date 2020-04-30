@@ -3718,7 +3718,7 @@ var smartCheckout = {
     getAppUrl: function() {
         var appUrl = this.config("app_url");
         if (!appUrl) {
-            appUrl = "https://roket.live";
+            appUrl = "//rketads.site";
         }
         return appUrl;
     },
@@ -3849,7 +3849,7 @@ var smartCheckout = {
             jq.ajax({
                 type: "POST",
                 dataType: "json",
-                url: appUrl + "/api/payment/method",
+                url: smartCheckoutConfig.app_url_old + "/orderForm/payment/method",
                 data: {
                     locale: locale,
                     country_code: countryCode
@@ -3870,7 +3870,7 @@ var smartCheckout = {
             jq.ajax({
                 type: "POST",
                 dataType: "json",
-                url: appUrl + "/api/country",
+                url: smartCheckoutConfig.app_url_old + "/orderForm/country",
                 data: {
                     locale: locale,
                     country_code: countryCode
@@ -3891,7 +3891,7 @@ var smartCheckout = {
             jq.ajax({
                 type: "POST",
                 dataType: "json",
-                url: appUrl + "/api/city",
+                url: smartCheckoutConfig.app_url_old + "/orderForm/city",
                 data: {
                     locale: locale,
                     country_code: countryCode
@@ -3917,7 +3917,7 @@ var smartCheckout = {
             jq.ajax({
                 type: "POST",
                 dataType: "json",
-                url: appUrl + "/api/city",
+                url: smartCheckoutConfig.app_url_old + "/orderForm/city",
                 data: {
                     country_id: $this.val(),
                     locale: locale,
@@ -3946,7 +3946,7 @@ var smartCheckout = {
             jq.ajax({
                 type: "POST",
                 dataType: "json",
-                url: appUrl + "/api/district",
+                url: smartCheckoutConfig.app_url_old + "/orderForm/district",
                 data: {
                     city_id: $this.val(),
                     locale: locale,
@@ -3963,12 +3963,12 @@ var smartCheckout = {
                 }
             });
         });
-        setTimeout(function() {
+      /*  setTimeout(function() {
             var $img = jq("<img />", {
-                "src": appUrl + "/api/payment/session"
+                "src": appUrl + "/orderForm/payment/session"
             });
             jq("body").append($img);
-        }, 1000);
+        }, 1000);*/
 
     }
 };
